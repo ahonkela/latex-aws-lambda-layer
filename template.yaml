@@ -15,6 +15,9 @@ Resources:
       ContentUri: build/layer.zip
       CompatibleRuntimes:
         - nodejs10.x
+        - python3.6
+        - python3.7
+        - python3.8
       LicenseInfo: https://www.tug.org/texlive/LICENSE.TL
       RetentionPolicy: Retain
 
@@ -37,4 +40,4 @@ Metadata:
     Labels: ['layer', 'latex', 'pdflatex', 'lambda', 'texlive', 'pandoc']
     HomePageUrl: https://github.com/serverlesspub/latex-aws-lambda-layer
     SemanticVersion: 1.0.0
-    SourceCodeUrl: https://github.com/serverlesspub/latex-aws-lambda-layer
+    SourceCodeUrl: https://github.com/ahonkela/latex-aws-lambda-layer

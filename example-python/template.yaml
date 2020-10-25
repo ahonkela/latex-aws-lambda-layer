@@ -1,0 +1,25 @@
+AWSTemplateFormatVersion: 2010-09-09
+Transform: AWS::Serverless-2016-10-31
+Description: >
+  Example project demonstrating the usage of the Latex Layer for AWS Linux 2 runtimes.
+
+Parameters:
+  LatexLayer:
+    Type: String
+Resources:
+  function:
+    Type: AWS::Serverless::Function
+    Properties:
+      FunctionName: latex_hello
+      Handler: lambda_latex_hello.lambda_handler
+      Timeout: 180
+      MemorySize: 1024
+      Runtime: python3.8
+      CodeUri: function/.
+      Layers:
+        - !Ref LatexLayer
+        - arn:aws:lambda:eu-north-1:513721864864:layer:perl-5-30:1
+      Environment:
+        Variables:
+                PATH: '/opt/texlive/bin/x86_64-linux:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/opt/bin'
+
